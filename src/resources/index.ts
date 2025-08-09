@@ -1,5 +1,20 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
+export {
+  Adventurers,
+  type Adventurer,
+  type Proficiency,
+  type MentorAssignment,
+  type GuidanceSession,
+  type ExperienceUpdateResult,
+  type AdventurerListResponse,
+  type AdventurerDeleteResponse,
+  type AdventurerCreateParams,
+  type AdventurerUpdateParams,
+  type AddExperienceParams,
+  type AssignMentorParams,
+  type GuidanceSessionParams,
+} from './adventurers';
 export * from './chat/index';
 export * from './shared';
 export { Audio, type AudioModel, type AudioResponseFormat } from './audio/audio';

@@ -20,6 +20,21 @@ import * as Uploads from './core/uploads';
 import * as API from './resources/index';
 import { APIPromise } from './core/api-promise';
 import {
+  Adventurer,
+  AdventurerCreateParams,
+  AdventurerDeleteResponse,
+  AdventurerListResponse,
+  AdventurerUpdateParams,
+  Adventurers,
+  AddExperienceParams,
+  AssignMentorParams,
+  ExperienceUpdateResult,
+  GuidanceSession,
+  GuidanceSessionParams,
+  MentorAssignment,
+  Proficiency,
+} from './resources/adventurers';
+import {
   Batch,
   BatchCreateParams,
   BatchError,
@@ -938,6 +953,7 @@ export class OpenAI {
 
   static toFile = Uploads.toFile;
 
+  adventurers: API.Adventurers = new API.Adventurers(this);
   completions: API.Completions = new API.Completions(this);
   chat: API.Chat = new API.Chat(this);
   embeddings: API.Embeddings = new API.Embeddings(this);
@@ -957,6 +973,7 @@ export class OpenAI {
   evals: API.Evals = new API.Evals(this);
   containers: API.Containers = new API.Containers(this);
 }
+OpenAI.Adventurers = Adventurers;
 OpenAI.Completions = Completions;
 OpenAI.Chat = Chat;
 OpenAI.Embeddings = Embeddings;
@@ -983,6 +1000,22 @@ export declare namespace OpenAI {
 
   export import CursorPage = Pagination.CursorPage;
   export { type CursorPageParams as CursorPageParams, type CursorPageResponse as CursorPageResponse };
+
+  export {
+    Adventurers as Adventurers,
+    type Adventurer as Adventurer,
+    type Proficiency as Proficiency,
+    type MentorAssignment as MentorAssignment,
+    type GuidanceSession as GuidanceSession,
+    type ExperienceUpdateResult as ExperienceUpdateResult,
+    type AdventurerListResponse as AdventurerListResponse,
+    type AdventurerDeleteResponse as AdventurerDeleteResponse,
+    type AdventurerCreateParams as AdventurerCreateParams,
+    type AdventurerUpdateParams as AdventurerUpdateParams,
+    type AddExperienceParams as AddExperienceParams,
+    type AssignMentorParams as AssignMentorParams,
+    type GuidanceSessionParams as GuidanceSessionParams,
+  };
 
   export {
     Completions as Completions,
